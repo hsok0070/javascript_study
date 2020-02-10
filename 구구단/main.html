@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 구구단</title>
+</head>
+<body>
+
+</body>
+<script>
+    while(true){
+        let 숫자1 = Math.floor(Math.random() * 9) + 1
+        let 숫자2 = Math.floor(Math.random() * 9) + 1
+        let 조건 = true
+        while(조건) {
+        let answer = 숫자1 * 숫자2
+        let input = Number(prompt(숫자1 +"*"+ 숫자2+'는?'))
+        if(answer === input) {
+            alert("정답")
+            조건 = false;
+        }else{
+            alert("땡")
+        }
+    }
+}
+</script>
+</html>
