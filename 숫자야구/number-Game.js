@@ -28,8 +28,6 @@ let count = 0;
 form.addEventListener('submit', (e) => {
     e.preventDefault();
         if(Number(input.value) ===  Number(randomNum.join(''))) { // randomNum 배열을 문자열로 변환 후 비교
-            console.log(input.value)
-            console.log(randomNum)
             answer.textContent = '홈런'
             input.value = null
            
@@ -63,8 +61,6 @@ form.addEventListener('submit', (e) => {
                 
                 for(let i = 0; i<input.value.length; i++){
                     if(Number(input.value.split('')[i]) === randomNum[i]) {
-                        console.log(input.value);
-                        console.log(randomNum);
                         strike ++
                     }else if(input.value.indexOf(randomNum[i]) > -1) { // 없는 값은 -1을 반환
                         ball ++;
