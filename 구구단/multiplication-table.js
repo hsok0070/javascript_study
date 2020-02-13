@@ -1,36 +1,42 @@
 let body = document.body;
 
+    let number1 = Math.ceil(Math.random() * 9)
+    let number2 = Math.ceil(Math.random() * 9)                                                                      
 
-let number1 = Math.ceil(Math.random() * 9)
-let number2 = Math.ceil(Math.random() * 9)                                                                      
+    let word = document.createElement('div');
+    word.textContent = number1 + '곱하기' + number2+'는?';
+    document.body.append(word);
 
-let word = document.createElement('div');
-word.textContent = number1 + '곱하기' + number2+'는?';
-document.body.append(word);
+    let answer = number1 * number2
 
-let answer = number1 * number2
+    let form = document.createElement('form');
+    document.body.append(form);
 
-let form = document.createElement('form');
-document.body.append(form);
+    let input = document.createElement('input');
+    input.type = 'number';
+    form.append(input);
 
-let input = document.createElement('input');
-form.append(input);
+    let button = document.createElement('button');
+    button.textContent = '확인!'
+    form.append(button);
 
-let button = document.createElement('button');
-button.textContent = '확인!'
-form.append(button);
-
-let result = document.createElement('div');
-document.body.append(result);
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if(input.value === answer) {
-        result.textContent = '딩동댕'
-    } else {
-        result.textContent = '땡'
-    }
-});
+    let result = document.createElement('div');
+    document.body.append(result);
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if(Number(input.value) === answer) {
+            result.textContent = '딩동댕';
+            number1 =  Math.ceil(Math.random() * 9)
+            number2 =  Math.ceil(Math.random() * 9)
+            answer = number1 * number2
+            word.textContent = number1 + '곱하기' + number2+'는?';
+            input.value = null;
+            input.focus
+        } else {
+            result.textContent = '땡';
+            input.focus
+        }
+    });
 
 /* while(true){
     let 숫자1 = Math.ceil(Math.random() * 9) + 1
