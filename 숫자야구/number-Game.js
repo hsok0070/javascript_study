@@ -1,14 +1,20 @@
 let word = document.createElement('div');
 document.body.append(word);
 
-let number = [1,2,3,4,5,6,7,8,9];
-let randomNum = [];
+let number;
+let randomNum;
 
-for(let i = 0; i < 4; i++) {
-    let drawing = number.splice(Math.floor(Math.random() * (number.length -1)) , 1)[0]; // splice는 배열을 반환 하기 때문에 [0]을 붙여줘야 0번째에 숫자 4자리가 들어 갈수 있다.
-    randomNum.push(drawing);
+function choiceNumber() {
+    number = [1,2,3,4,5,6,7,8,9];
+    randomNum = [];
+    
+    for(let i = 0; i < 4; i++) {
+        let drawing = number.splice(Math.floor(Math.random() * (number.length -1)) , 1)[0]; // splice는 배열을 반환 하기 때문에 [0]을 붙여줘야 0번째에 숫자 4자리가 들어 갈수 있다.
+        randomNum.push(drawing);
+    }
+    console.log(randomNum);
 }
-console.log(randomNum);
+choiceNumber();
 
 let answer = document.createElement('h1')
 document.body.append(answer);
@@ -31,15 +37,8 @@ form.addEventListener('submit', (e) => {
             answer.textContent = '홈런'
             input.value = null
            
-            number = [1,2,3,4,5,6,7,8,9];
-            randomNum = [];
-
-            for(let i = 0; i < 4; i++) {
-                let drawing = number.splice(Math.floor(Math.random() * (number.length -1)) , 1)[0];
-                randomNum.push(drawing);
-            }
+            choiceNumber();
             count = 0;
-            console.log(randomNum)
 
         }else{
             let strike = 0;
@@ -49,13 +48,7 @@ form.addEventListener('submit', (e) => {
                 answer.textContent = '틀린 횟수 초과로 실패하였습니다. 정답은:' + randomNum
                 input.value = null;
                 input.focus();
-                number = [1,2,3,4,5,6,7,8,9];
-                randomNum = [];
-
-                for(let i = 0; i < 4; i++) {
-                    let drawing = number.splice(Math.floor(Math.random() * (number.length -1)) , 1)[0];
-                    randomNum.push(drawing);
-                }
+                choiceNumber();
                 count = 0;
             }else {
                 
