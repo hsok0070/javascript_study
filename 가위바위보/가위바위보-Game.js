@@ -51,15 +51,19 @@ let interval;
 
             let 나의선택 = btn.textContent
             console.log(나의선택, 컴퓨터선택(computer));
-            let 나의점수 = 점수표[나의선택];
+            let 나의점수 = 점수표[나의선택]; 
             let 컴퓨터점수 =  점수표[컴퓨터선택(computer)]
-            if(나의점수 - 컴퓨터점수 === 0) {
-                console.log('비겼습니다.')
-            }else if([-1,2].includes(나의점수 - 컴퓨터점수)) {
-            /* else if( 점수표[나의선택] - 점수표[컴퓨터선택(computer)] === -1 || 점수표[나의선택] - 점수표[컴퓨터선택(computer)] === 2 ) */
-                console.log('이겼습니다')
+            let 점수차 = 나의점수 - 컴퓨터점수;
+            if(점수차 === 0) {
+                /* console.log('비겼습니다.') */
+                alert('비겼습니다.')
+            }else if([-1,2].includes(점수차)) {
+                /* else if( 점수표[나의선택] - 점수표[컴퓨터선택(computer)] === -1 || 점수표[나의선택] - 점수표[컴퓨터선택(computer)] === 2 ) */
+                /* console.log('이겼습니다') */
+                alert('이겼습니다.')
             }else {
-                console.log('졌습니다.')
+                /* console.log('졌습니다.') */
+                alert('졌습니다.')
             };
 
 
